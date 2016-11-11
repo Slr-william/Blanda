@@ -3,7 +3,7 @@ from .models import *
 
 class formBuscar(forms.Form):
 
-    c1 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all())
-    c2 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all())
-    c3 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all())
-    c4 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all())
+    sintoma1 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all().order_by('feature'))
+    sintoma2 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all().order_by('feature'))
+    sintoma3 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all().order_by('feature'))
+    sintoma4 = forms.ModelChoiceField(required=True, queryset= caracteristica.objects.all().order_by('feature'))

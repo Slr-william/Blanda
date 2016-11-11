@@ -14,14 +14,14 @@ def fname(sintoma):
 
 
 def buscar(request):
-    form = formBuscar(request.POST)
-
+    form = formBuscar(request.POST or None)
+    print(request.POST)
     if request.method == 'POST':
         if form.is_valid():
-            c1 = form.cleaned_data.get('c1')
-            c2 = form.cleaned_data.get('c2')
-            c3 = form.cleaned_data.get('c3')
-            c4 = form.cleaned_data.get('c4')
+            c1 = form.cleaned_data.get('sintoma1')
+            c2 = form.cleaned_data.get('sintoma2')
+            c3 = form.cleaned_data.get('sintoma3')
+            c4 = form.cleaned_data.get('sintoma4')
 
             a = fname(c1)
             b = fname(c2)
@@ -32,6 +32,9 @@ def buscar(request):
             intersection2 = list(set(a) & set(b))
             intersection3 = list(set(intersection1) & set(intersection2))
 
-            #return HttpResponse(intersection3[0])
+            if(len(intersection3) == 0):
+                intersection3.append("No se tiene informacion de la enfermedad")
+
+
             return render(request,'sistemaExperto/index.html',{'form':form, 'enfermedad':intersection3})
     return render(request,'sistemaExperto/index.html',{'form':form})

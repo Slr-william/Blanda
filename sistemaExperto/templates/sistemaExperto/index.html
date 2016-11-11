@@ -4,17 +4,16 @@
 		  <link rel="stylesheet" href="{% static 'sistemaExperto/style.css' %}" type="text/css">
 		<h1>¿Cual es tu enfermedad?</h1>
 		<form method="POST">
-
 			{% csrf_token %}
 			{{form.as_p}}
-		<input type="submit">
-
+			<button type="submit">Enviar</button>
+		</form>
 		<br>
 
 		{% for ill in enfermedad %}
-			<p>Su enfermedad prodría ser:</p> {{ill}}
+			<p>Su enfermedad prodría ser:</p> 
+			<h3>{{ill}}</h3>
 		{% endfor %}
 
-		</form>
 </head>
 </html>
