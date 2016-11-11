@@ -9,6 +9,12 @@
 			{{form.as_p}}
 		<input type="submit">
 
+		<br>
+
+		{% for ill in enfermedad %}
+			<p>Su enfermedad prodría ser:</p> {{ill}}
+		{% endfor %}
+
 		</form>
 </head>
 </html>

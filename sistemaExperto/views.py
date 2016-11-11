@@ -32,5 +32,6 @@ def buscar(request):
             intersection2 = list(set(a) & set(b))
             intersection3 = list(set(intersection1) & set(intersection2))
 
-            return HttpResponse(intersection3[0])
+            #return HttpResponse(intersection3[0])
+            return render(request,'sistemaExperto/index.html',{'form':form, 'enfermedad':intersection3})
     return render(request,'sistemaExperto/index.html',{'form':form})
