@@ -17,3 +17,6 @@ class caracteristica(models.Model):
 class objetoCaracteristica(models.Model):
     obj = models.ForeignKey(objeto, on_delete=models.CASCADE)
     fea = models.ForeignKey(caracteristica, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} - {}".format(self.obj.name, self.fea.feature)

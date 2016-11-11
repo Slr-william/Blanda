@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'Blanda.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/srwilliam/Blanda/db.sqlite',
+        'NAME': 'db.sqlite',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
