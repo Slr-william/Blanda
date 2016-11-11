@@ -1,0 +1,14 @@
+<html>
+	<head>
+		{% load staticfiles %}
+		  <link rel="stylesheet" href="{% static 'sistemaExperto/style.css' %}" type="text/css">
+		<h1>¿Cual es tu enfermedad?</h1>
+		<form method="POST">
+
+			{% csrf_token %}
+			{{form.as_p}}
+		<input type="submit">
+
+		</form>
+</head>
+</html>

@@ -1,0 +1,5 @@
+body{
+  background: black url(images/dia.jpg);
+  text-shadow: 0px 0px 2px red;
+  font-size: medium;
+}
